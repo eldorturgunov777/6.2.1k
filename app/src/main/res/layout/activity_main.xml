@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:hint="String"
-        android:inputType="text"
+        android:hint="Long"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,18 +31,6 @@
         app:layout_constraintTop_toBottomOf="@+id/et_string" />
 
     <EditText
-        android:id="@+id/et_boolean"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="0 or 1"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_float" />
-
-    <EditText
         android:id="@+id/et_integer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,16 +40,36 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_boolean" />
+        app:layout_constraintTop_toBottomOf="@+id/et_float" />
+
+    <Switch
+        android:id="@+id/_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_integer"
+        app:layout_constraintTop_toBottomOf="@+id/et_integer"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
+        android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:onClick="save"
         android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_integer"
+        app:layout_constraintTop_toBottomOf="@+id/_switch"
         tools:ignore="UsingOnClickInXml" />
+
+    <TextView
+        android:id="@+id/load"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/save" />
 </androidx.constraintlayout.widget.ConstraintLayout>
